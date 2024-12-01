@@ -1,4 +1,4 @@
-#Browser Performance Project
+# Browser Performance Project
 
 ## Description
 This project automates performance testing of web browsers in the context of different web pages. The following are measured:
@@ -11,7 +11,7 @@ This project automates performance testing of web browsers in the context of dif
 - Google Chrome, Brave, Microsoft Edge
 - Installed browsers and their WebDriver (e.g. chromedriver, geckodriver)
 
-## Instalacja
+## Instalation
 1. Clone the repository or download the files.
 2. Install the required libraries:
    ```bash
