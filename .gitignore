@@ -1,0 +1,16 @@
+# Ignoruj folder z wirtualnym środowiskiem
+venv/
+
+# Ignoruj pliki tymczasowe VS Code
+.vscode/
+
+# Ignoruj pliki Pythona
+__pycache__/
+*.pyc
+
+# Ignoruj pliki logów
+*.log
+
+# Ignoruj dane generowane przez system operacyjny
+.DS_Store
+Thumbs.db
