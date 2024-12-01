@@ -1,4 +1,4 @@
-#Browser Performance Project
+# Browser Performance Project
 
 ## Description
 This project automates performance testing of web browsers in the context of different web pages. The following are measured:
