@@ -1,0 +1,7 @@
+URL,Browser,Load Time (s),CPU Usage (%),Memory Usage (MB)
+https://www.example.com,Chrome,0.5276498794555664,0.0,17.2578125
+https://www.google.com,Chrome,1.2658133506774902,0.0,17.22265625
+https://www.example.com,Firefox,0.4157741069793701,0.0,7.64453125
+https://www.google.com,Firefox,1.3294012546539307,0.0,7.6328125
+https://www.example.com,Edge,0.525444507598877,0.0,21.3125
+https://www.google.com,Edge,1.103283166885376,0.0,22.7578125
