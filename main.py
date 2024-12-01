@@ -55,16 +55,22 @@ def run_tests():
 
 # Generowanie wykresów
 def generate_plots(df):
-    df_melted = df.melt(id_vars=['URL', 'Browser'], value_vars=['Load Time (s)', 'CPU Usage (%)', 'Memory Usage (MB)'],
-                        var_name='Metric', value_name='Value')
-
-    sns.barplot(x='URL', y='Value', hue='Browser', data=df_melted, ci=None)
-    plt.title('Browser Performance Comparison')
-    plt.ylabel('Value (s, %, MB)')
-    plt.xlabel('Website')
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.show()
+    metrics = ['Load Time (s)', 'CPU Usage (%)', 'Memory Usage (MB)']
+    
+    for metric in metrics:
+        # Filtruj dane dla aktualnej metryki
+        df_metric = df[['URL', 'Browser', metric]].copy()
+        df_metric = df_metric.rename(columns={metric: 'Value'})
+        
+        # Tworzenie wykresu dla każdej metryki
+        plt.figure(figsize=(10, 6))
+        sns.barplot(x='URL', y='Value', hue='Browser', data=df_metric, ci=None)
+        plt.title(f'Browser Performance Comparison: {metric}')
+        plt.ylabel(metric)
+        plt.xlabel('Website')
+        plt.xticks(rotation=45)
+        plt.tight_layout()
+        plt.show()
 
 if __name__ == "__main__":
     results_df = run_tests()
