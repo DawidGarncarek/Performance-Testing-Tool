@@ -8,7 +8,7 @@ This project automates performance testing of web browsers in the context of dif
 
 ## Requirements
 - Python 3.7+
-- Google Chrome, Brave, Microsoft Edge
+- Google Chrome, Firefox, Microsoft Edge
 - Installed browsers and their WebDriver (e.g. chromedriver, geckodriver)
 
 ## Instalation
