@@ -22,9 +22,9 @@ This project automates performance testing of web browsers in the context of dif
    python main.py
    ```
 4. Webdocker instalation:
-   For Chrome: https://googlechromelabs.github.io/chrome-for-testing/#stable
-   For Firefox: https://github.com/mozilla/geckodriver/releases
-   For Edge: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH#downloads
+- For Chrome: https://googlechromelabs.github.io/chrome-for-testing/#stable
+- For Firefox: https://github.com/mozilla/geckodriver/releases
+- For Edge: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH#downloads
 
 ## Results
 The test results are saved in the `results.csv` file and visualized in the form of graphs.
