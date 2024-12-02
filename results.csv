@@ -1,7 +1,13 @@
 URL,Browser,Load Time (s),CPU Usage (%),Memory Usage (MB)
-https://www.example.com,Chrome,0.5276498794555664,0.0,17.2578125
-https://www.google.com,Chrome,1.2658133506774902,0.0,17.22265625
-https://www.example.com,Firefox,0.4157741069793701,0.0,7.64453125
-https://www.google.com,Firefox,1.3294012546539307,0.0,7.6328125
-https://www.example.com,Edge,0.525444507598877,0.0,21.3125
-https://www.google.com,Edge,1.103283166885376,0.0,22.7578125
+https://www.wikipedia.org,Chrome,0.4104,0.0000,18.1602
+https://www.google.com/maps,Chrome,0.6431,0.0000,18.1953
+https://www.youtube.com,Chrome,2.2165,0.0000,18.1797
+https://www.facebook.com,Chrome,0.8286,0.0000,18.2695
+https://www.wikipedia.org,Firefox,0.3033,0.0000,7.5664
+https://www.google.com/maps,Firefox,0.8275,0.0000,7.5625
+https://www.youtube.com,Firefox,1.4638,0.0000,7.6289
+https://www.facebook.com,Firefox,0.9563,0.0000,7.6172
+https://www.wikipedia.org,Edge,0.4124,1.6000,23.3398
+https://www.google.com/maps,Edge,0.5425,1.6000,23.4453
+https://www.youtube.com,Edge,1.7292,0.0000,23.5195
+https://www.facebook.com,Edge,0.9148,1.6000,23.4766
