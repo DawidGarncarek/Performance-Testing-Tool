@@ -111,7 +111,7 @@ if __name__ == "__main__":
     combined_df = pd.concat(all_results, ignore_index=True)     
     average_results = combined_df.groupby(['URL', 'Browser'], as_index=False).mean()
     average_results = average_results.round(4)
-    average_results.to_csv('average_results.csv', index=False, float_format='%.4f')
+    average_results.to_csv('average_results.csv', index=False, sep=';', float_format='%.4f')
     
     # Generowanie wykresów na podstawie średnich wyników
     generate_plots(average_results)
