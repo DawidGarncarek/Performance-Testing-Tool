@@ -6,7 +6,9 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.edge.service import Service as EdgeService
 import psutil
 import time
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.ticker as mticker
 import seaborn as sns
 
@@ -75,8 +77,9 @@ def run_tests():
 # Generowanie wykresów
 def generate_plots(df):
     metrics = ['Load Time (s)', 'CPU Usage (%)', 'Memory Usage (MB)']
+    filenames = ['load_time.png', 'cpu_usage.png','memory_usage.png']
     
-    for metric in metrics:
+    for metric, filename in zip(metrics, filenames):
         # Filtruj dane dla aktualnej metryki
         df_metric = df[['URL', 'Browser', metric]].copy()
         df_metric = df_metric.rename(columns={metric: 'Value'})
@@ -91,11 +94,25 @@ def generate_plots(df):
         plt.xlabel('Website')
         plt.xticks(rotation=45)
         plt.tight_layout()
-        plt.show()
+        plt.savefig(filename)
+        print(f"WYkres dla {metric} zapisano jako {filename}")
+        plt.close()
 
 if __name__ == "__main__":
-    results_df = run_tests()
-    results_df = results_df.round(4)  
-    print(results_df)
-    results_df.to_csv('results.csv', index=False, float_format='%.4f') 
-    generate_plots(results_df)
+    all_results = []  
+
+    for i in range(1, 11):  # Wykonanie testów 10 razy
+        print(f"Running test iteration {i}...")
+        results_df = run_tests()
+        results_df = results_df.round(4)
+        all_results.append(results_df)
+        results_df.to_csv(f'result{i}.csv', index=False, float_format='%.4f')
+
+    combined_df = pd.concat(all_results, ignore_index=True)     
+    average_results = combined_df.groupby(['URL', 'Browser'], as_index=False).mean()
+    average_results = average_results.round(4)
+    average_results.to_csv('average_results.csv', index=False, float_format='%.4f')
+    
+    # Generowanie wykresów na podstawie średnich wyników
+    generate_plots(average_results)
+    print("Średnie wyniki zapisano w pliku 'average_results.csv'. Wykresy zostały wygenerowane.")
